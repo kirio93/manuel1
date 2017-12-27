@@ -1,0 +1,28 @@
+page-random {
+.ciao{
+
+  top: auto;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ background: #ffffff !important;
+    max-width: 70%;
+
+}
+  .img-loaded{
+
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    max-width: 70%;
+  }
+  ion-img {
+    display: inline-block;
+    min-width: 100%;
+    min-height: 100%;
+    background: #ffffff !important;
+    contain: strict;
+  }
+}
