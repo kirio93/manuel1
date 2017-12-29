@@ -15,6 +15,8 @@ import {FormsModule} from "@angular/forms";
 import {IonicStorageModule} from "@ionic/storage";
 import { ProvaProvider } from '../providers/prova/prova';
 import {HttpClientModule} from "@angular/common/http";
+import {LocalNotifications} from "@ionic-native/local-notifications";
+import {InfoPage} from "../pages/info/info";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import {HttpClientModule} from "@angular/common/http";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InfoPage
   ],
   imports: [
     FormsModule,
@@ -39,9 +42,11 @@ import {HttpClientModule} from "@angular/common/http";
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    InfoPage
   ],
   providers: [
+    LocalNotifications,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

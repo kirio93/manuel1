@@ -1,17 +1,13 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content>
 
-  <h3>The First Solution</h3>
-
-  <ion-item *ngFor="let a of storico"><ion-img src="{{a.oggetto}}"></ion-img></ion-item>
-
-
+  <ion-list>
+    <ion-item *ngFor="let a of storico" (click)="changePage(a)" >
+      <ion-avatar item-start>
+        <img src="{{a.oggetto}}">
+      </ion-avatar>
+      <h2>{{a.data|date:'dd/MM/yyyy'}}</h2>
+      <p>{{a.descr}}</p>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

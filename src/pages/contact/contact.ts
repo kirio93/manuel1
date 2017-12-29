@@ -2,6 +2,7 @@ import {Component, } from '@angular/core';
 import {NavController, NavParams, ViewController} from 'ionic-angular';
 import {ProvaProvider} from "../../providers/prova/prova";
 import {Oggetti} from "../../app/oggetti";
+import {InfoPage} from "../info/info";
 
 @Component({
   selector: 'page-contact',
@@ -10,12 +11,13 @@ import {Oggetti} from "../../app/oggetti";
 export class ContactPage {
   storico=new Array<Oggetti>();
 
-  constructor(public navCtrl: NavController, private prova:ProvaProvider, public navParams: NavParams,  public viewCtrl: ViewController){
+  constructor(public navCtrl: NavController){
     // Receiving data via navController
   this.storico=<Array<Oggetti>>JSON.parse(localStorage.getItem("storico"));
     console.log(this.storico)
 
   }
+
   doRefresh(refresher) {
     console.log('Begin async operation', refresher);
 
@@ -25,6 +27,8 @@ export class ContactPage {
     }, 2000);
   }
 
-
+  changePage(ogg:Oggetti) {
+    this.navCtrl.push(InfoPage, {ogg:ogg});
+  }
 
 }
